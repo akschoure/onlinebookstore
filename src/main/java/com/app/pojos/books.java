@@ -2,7 +2,6 @@ package com.app.pojos;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -66,7 +65,7 @@ public class Books {
 
 	@ManyToOne
 	@JoinColumn (name= "categoryid")
-	private category category;
+	private Category category;
 
 	@ManyToOne
 	@JoinColumn (name= "authorid")

@@ -1,3 +1,4 @@
+package com.app.pojos;
 //package com.app.pojos;
 //
 //import javax.persistence.Column;
@@ -23,7 +24,7 @@
 //
 //@Entity
 //@Table(name = "order")
-//public class order {
+//public class Order {
 //	
 //	@Id
 //	@GeneratedValue(strategy=GenerationType.AUTO)

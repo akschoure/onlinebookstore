@@ -13,7 +13,7 @@ import javax.persistence.Table;
 //
 //@Entity
 //@Table(name = "review")
-//public class review {
+//public class Review {
 //	
 //	@Id
 //	@GeneratedValue(strategy=GenerationType.AUTO)

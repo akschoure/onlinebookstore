@@ -1,3 +1,4 @@
+package com.app.pojos;
 //package com.app.pojos;
 //
 //import javax.persistence.Column;
@@ -27,7 +28,7 @@
 //	@Id
 //	@GeneratedValue(strategy=GenerationType.AUTO)
 //@Column
-//private int addressid;
+//private int Addressid;
 //@Column (length = 1000)
 //private String address;
 //@Column(length = 30)

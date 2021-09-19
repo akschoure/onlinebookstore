@@ -20,7 +20,7 @@ import lombok.ToString;
 
 @Entity
 @Table (name = "category")
-public class category {
+public class Category {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
