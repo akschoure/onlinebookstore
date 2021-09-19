@@ -23,12 +23,12 @@ import java.time.LocalDate;
 @ToString
 @Entity
 @Table (name = "books")
-public class books {
+public class Books {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column
-	private int bookid;
+	private Integer bookid;
 
 	@Column (length = 30 )
 	private String title;
