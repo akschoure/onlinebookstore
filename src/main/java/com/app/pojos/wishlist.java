@@ -6,7 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -14,33 +15,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
 @Setter
+@Getter
 @ToString
-
-//@Entity
-//@Table(name= "address")
-//public class address {
 //
+//@Entity
+//@Table(name= "wishlist")
+//public class wishlist {
+//	
 //	@Id
 //	@GeneratedValue(strategy=GenerationType.AUTO)
-//@Column
-//private int addressid;
-//@Column (length = 1000)
-//private String address;
-//@Column(length = 30)
-//private String city;
-//@Column(length = 30)
-//private String state;
-//@Column(length = 30)
-//private String pincode;
-//@Column(length = 10)
-//private String mobilenumber;
-//@ManyToOne
-//@JoinColumn(name= "userid")
-//private int userid;
-//
+//	@Column
+//	private int wishlistid;
+//	@OneToMany
+//	@JoinColumn(name = "bookid")
+//	private int bookid;
+//	@OneToOne
+//	@JoinColumn(name = "userid")
+//	private int userid;
+//	
 //
 //}

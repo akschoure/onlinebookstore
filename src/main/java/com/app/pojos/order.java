@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -19,28 +20,25 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-
-//@Entity
-//@Table(name= "address")
-//public class address {
 //
+//@Entity
+//@Table(name = "order")
+//public class order {
+//	
 //	@Id
 //	@GeneratedValue(strategy=GenerationType.AUTO)
-//@Column
-//private int addressid;
-//@Column (length = 1000)
-//private String address;
-//@Column(length = 30)
-//private String city;
-//@Column(length = 30)
-//private String state;
-//@Column(length = 30)
-//private String pincode;
-//@Column(length = 10)
-//private String mobilenumber;
-//@ManyToOne
-//@JoinColumn(name= "userid")
-//private int userid;
-//
-//
+//	@Column
+//	private int id;
+//	@Column
+//	private int orderid;
+//	@Column
+//	private int qty;    //int
+//	@ManyToOne
+//	@JoinColumn(name="userid")
+//	private int userid;
+//	@ManyToMany
+//	@JoinColumn(name="bookid")
+//	private int bookid;
+//	
+//	
 //}

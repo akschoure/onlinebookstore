@@ -1,5 +1,75 @@
 package com.app.pojos;
 
-public class books {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import java.time.LocalDate;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+@Entity
+@Table (name = "books")
+public class books {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column
+	private int bookid;
+
+	@Column (length = 30 )
+	private String title;
+	
+	@Column (length=50)
+	private String publication;
+
+	@Column (length = 30 , unique = true)
+	private String isbn;
+	
+	@Column
+	private double price ;
+	
+	@Column (length = 2000)
+	private String description;
+	
+	@Column 
+	private int quantity;      //int 
+
+	@Column (length = 500)
+	private String imageurl;
+	
+	@Column
+	private double discount;
+
+	@Column
+	private LocalDate arrivaldate;
+
+	@Column (length = 10)
+	private String language;
+
+	@Column (length = 6)
+	private int pages;                 //int 
+
+
+	@ManyToOne
+	@JoinColumn (name= "categoryid")
+	private category category;
+
+	@ManyToOne
+	@JoinColumn (name= "authorid")
+	private Author author;
+	
 }

@@ -12,25 +12,25 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
-
 @Entity
-@Table (name = "category")
-public class category {
-	
+@Table(name = "author")
+public class Author {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column
-	private int categoryid;
-
-	@Column (length = 30 , unique = true)
-	private String categoryname;
-
-	@Column(length = 1000)
+	private int authorid;
+	
+	@Column(length = 30)
+	private String authorname;
+	
+	@Column (length = 1000)
 	private String description;
+	
 
 }
