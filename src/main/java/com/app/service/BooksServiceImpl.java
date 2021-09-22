@@ -10,6 +10,7 @@ import com.app.dao.BooksRepository;
 import com.app.pojos.Books;
 
 @Service
+@Transactional
 public class BooksServiceImpl implements IBooksService {
 
 	@Autowired
@@ -31,10 +32,23 @@ public class BooksServiceImpl implements IBooksService {
 
 	@Override
 	public Books addBook(Books book) {
-		// TODO Auto-generated method stub
 		return booksRepo.save(book);
 	}
-	
 
+
+	@Override
+	public String deleteBook(int bookid) {
+		booksRepo.deleteById(bookid);
+		return "Books details deleted for id"+bookid;
+	}
+
+
+	@Override
+	public Books updateBook(Books detachedBook) {
+		
+		return booksRepo.save(detachedBook);
+	}
+	
+    
 
 }

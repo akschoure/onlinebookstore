@@ -11,20 +11,22 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-@Column (length = 30)
-private String firstname;
-@Column (length = 30)
-private String lastname;
-@Column (length = 30)
-private String emailid;
-@Column (length = 10)
-private String mobilenumber;
-@Column (length = 10)         //10
-private String password;
-@Column (length = 6)
-private String gender;
+@Id
+@GeneratedValue(strategy=GenerationType.AUTO)
+    @Column
+	private int userid;	
+    @Column (length = 30)
+    private String firstname;
+    @Column (length = 30)
+    private String lastname;
+    @Column (length = 30)
+    private String emailid;
+    @Column (length = 10)
+    private String mobilenumber;
+    @Column (length = 10)         
+    private String password;
+    @Column (length = 6)
+    private String gender;
 
 
 }

@@ -18,16 +18,37 @@ public class AuthorServiceImpl implements IAuthorService {
 	@Autowired
 	public AuthorRepository authorRepo;
 
+	
 	@Override
 	public List<Author> getAllAuthor() {
-	
 		return authorRepo.findAll();
 	}
 
+	
 	@Override
 	public Author getAuthorDetails(int authorid) {
-		
 		return authorRepo.findById(authorid).orElseThrow()  ;
 	}
+
+	
+	@Override
+	public Author addAuthor(Author author) {
+		return authorRepo.save(author);
+	}
+
+	
+	@Override
+	public String deleteAuthor(int authorid) {
+		authorRepo.deleteById(authorid);
+		return "author deleted "+authorid;
+	}
+
+	
+	@Override
+	public Author updateAuthor(Author detachAuthor) {
+		return authorRepo.save(detachAuthor);
+	}
+	
+	
 
 }

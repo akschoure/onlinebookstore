@@ -4,8 +4,6 @@ import java.util.List;
 
 
 import com.app.service.IBooksService;
-import com.app.service.UserServiceImpl;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -51,11 +49,11 @@ public class BooksRestController {
 	}
 	catch(RuntimeException e)
 	{
-		return new ResponseEntity<>(new ErrorResponse ("fetch user failed",e.getMessage()),HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(new ErrorResponse ("fetch book failed",e.getMessage()),HttpStatus.BAD_REQUEST);
 	}
 }
 	
-//add new book*****************************
+//add new book
 	
 	@PostMapping
 	public ResponseEntity <?> addNewBook (@RequestBody Books transientUser)
@@ -92,12 +90,11 @@ public class BooksRestController {
 		}
 		catch(RuntimeException e)
 		{
-			System.out.println("");
 			return new ResponseEntity<> (new ErrorResponse("Updating Books Details failed" ,e.getMessage()),HttpStatus.BAD_REQUEST);
 		}
 	}
 	
-	//get book by using id 
+	
 	
 		
 }

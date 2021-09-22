@@ -11,4 +11,8 @@ public interface IBooksService {
 	Books getBookDetails (int bookid);
 	
 	Books addBook (Books book);
+	
+	String deleteBook (int bookid);
+	
+	Books updateBook (Books detachedBook);
 }
