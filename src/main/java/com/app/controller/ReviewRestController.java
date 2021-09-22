@@ -73,7 +73,7 @@ public class ReviewRestController {
 	public ResponseEntity<?> updateRiview(@RequestBody Review detachedReview, @PathVariable int reviewid)
 	{
 		try {
-			System.out.println("");
+			System.out.println("in update");
 			Review existingReview = reviewService.getReviewDetails(reviewid);
 			return ResponseEntity.ok(reviewService.updateReview(detachedReview));
 			
