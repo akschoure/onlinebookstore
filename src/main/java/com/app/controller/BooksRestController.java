@@ -84,17 +84,23 @@ public class BooksRestController {
 	}
 	
 	@GetMapping
-	public List<Books> fetchBooksByCategoryId (@RequestBody String categoryIds)
+	public List<Books> fetchBooksByCategoryId (@RequestParam String authorIds , @RequestBody String categoryIds)
 	{
 		if(authorIds==null)
 		{
 		List <Integer> categoryIdList = new ArrayList<Integer>();
 		for (String s :categoryIds.split(",") ) {
 			categoryIdList.add(Integer.parseInt(s.trim()));
+			
+			return booksRepo.findByCategoryIdIn(categoryIdList);
 		}
 	
-		return booksRepo.findByCategoryIdIn(categoryIdList);		
+				
 	}
+		else {
+			
+		}
+		
 	}
 //	
 //	
