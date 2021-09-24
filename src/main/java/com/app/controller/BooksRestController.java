@@ -84,21 +84,22 @@ public class BooksRestController {
 	}
 	
 	@GetMapping
-	public List<Books> fetchBooksByCategoryId (@RequestParam String authorIds ,@RequestBody String categoryIds)
+	public List<Books> fetchBooksByCategoryId (@RequestBody String categoryIds)
 	{
-		//if(authorIds==null)
-		
+		if(authorIds==null)
+		{
 		List <Integer> categoryIdList = new ArrayList<Integer>();
 		for (String s :categoryIds.split(",") ) {
 			categoryIdList.add(Integer.parseInt(s.trim()));
-		
-		
+		}
+	
 		return booksRepo.findByCategoryIdIn(categoryIdList);		
 	}
-	
+	}
+//	
 //	
 //	@GetMapping
-//	public List<Books> findByAuthorIdIn (@RequestParam String authorIds , @RequestBody String authorIds)
+//	public List<Books> findByAuthorIdIn (@RequestBody String authorIds)
 //	{
 //		//if(categoryIds==null)
 //		
@@ -107,7 +108,7 @@ public class BooksRestController {
 //			authorIdList.add(Integer.parseInt(s.trim()));
 //		}
 //	
-//		return booksRepo.findByCategoryIdIn(authorIdList);		
+//		return booksRepo.findByAuthorIdIn(authorIdList);		
 //}
 //	
 	
