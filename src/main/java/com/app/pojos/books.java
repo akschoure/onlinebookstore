@@ -63,12 +63,15 @@ public class Books {
 	private int pages;                 //int 
 
 
-	@ManyToOne
-	@JoinColumn (name= "categoryid")
-	private Category category;
+	//@ManyToOne
+	//@JoinColumn (name= "categoryid")
+	//private Category category;
+	@Column  (name= "categoryid")
+	private Integer categoryId;
 
-	@ManyToOne
-	@JoinColumn (name= "authorid")
-	private Author author;
+	//@ManyToOne
+	//@JoinColumn (name= "authorId")
+	@Column  (name= "authorid")
+	private Integer authorId;
 	
 }

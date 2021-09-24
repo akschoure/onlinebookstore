@@ -20,7 +20,7 @@ import com.app.pojos.Review;
 import com.app.service.IReviewService;
 
 @RestController
-@RequestMapping("/review")
+@RequestMapping("/reviews")
 public class ReviewRestController {
 	
 	@Autowired
@@ -29,7 +29,7 @@ public class ReviewRestController {
 	@GetMapping
 	public List<Review> getAllReview()
 	{
-		System.out.println(" in fetch api ");
+		System.out.println(" in fetch api  ");
 		return reviewService.getAllReview();
 	}
 	

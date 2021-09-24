@@ -15,4 +15,7 @@ public interface IBooksService {
 	String deleteBook (int bookid);
 	
 	Books updateBook (Books detachedBook);
+	
+   //List <Books> findByAuthorIdandCategoryId(int authorid , int categoryid);
+
 }

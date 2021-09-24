@@ -11,6 +11,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+
 @Entity
 @Table(name = "review")
 public class Review {
@@ -18,7 +29,7 @@ public class Review {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column
-	private int reviewid;
+	private Integer reviewid;
 	@Column 
 	private int rating;
 	@Column (length= 2000)

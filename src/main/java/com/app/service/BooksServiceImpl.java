@@ -48,7 +48,14 @@ public class BooksServiceImpl implements IBooksService {
 		
 		return booksRepo.save(detachedBook);
 	}
-	
+
+
+//	@Override
+//	public List<Books> findByAuthorIdandCategoryId(int authorid, int categoryid) {
+//		
+//		return booksRepo.findByAuthorIdandCategoryId(authorid, categoryid);
+//	}
+
     
 
 }
