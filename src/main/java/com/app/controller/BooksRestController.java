@@ -41,7 +41,7 @@ public class BooksRestController {
 	
 
 	
-	@GetMapping
+	//@GetMapping
 //	
 //	public List<Books> fetchAllBooks(@RequestParam Integer authorid , @RequestParam  Integer categoryid)
 //	{
@@ -67,48 +67,47 @@ public class BooksRestController {
 	//to get books by
 	
 	
-	public List<Books> fetchAllBooks(@RequestParam String authorIds , @RequestParam  String categoryIds)
-	{
-		
-		List<Integer> authorIdList=new ArrayList<Integer>();
-		for (String s :authorIds.split(",") ) {
-			 authorIdList.add(Integer.parseInt(s.trim()));
-		}
-		
-		List<Integer> categoryIdList=new ArrayList<Integer>();
-		for (String s :categoryIds.split(",") ) {
-			categoryIdList.add(Integer.parseInt(s.trim()));
-		}
-	return booksRepo.findByAuthorIdInAndCategoryIdIn(authorIdList, categoryIdList);
+//	public List<Books> fetchAllBooks(@RequestParam String authorIds , @RequestParam  String categoryIds)
+//	{
+//		
+//		List<Integer> authorIdList=new ArrayList<Integer>();
+//		for (String s :authorIds.split(",") ) {
+//			 authorIdList.add(Integer.parseInt(s.trim()));
+//		}
+//		
+//		List<Integer> categoryIdList=new ArrayList<Integer>();
+//		for (String s :categoryIds.split(",") ) {
+//			categoryIdList.add(Integer.parseInt(s.trim()));
+//		}
+//	return booksRepo.findByAuthorIdInAndCategoryIdIn(authorIdList, categoryIdList);
+//	
+//	}
 	
-	}
-	
-	@GetMapping
-	public List<Books> fetchBooksByCategoryId (@RequestParam String authorIds , @RequestBody String categoryIds)
-	{
-		if(authorIds==null)
-		{
-		List <Integer> categoryIdList = new ArrayList<Integer>();
-		for (String s :categoryIds.split(",") ) {
-			categoryIdList.add(Integer.parseInt(s.trim()));
-			
-			return booksRepo.findByCategoryIdIn(categoryIdList);
-		}
-	
-				
-	}
-		else {
-			
-		}
-		
-	}
+//	@GetMapping
+//	public List<Books> fetchBooksByCategoryId (@RequestParam String authorIds , @RequestBody String categoryIds)
+//	{
+//		if(authorIds==null)
+//		{
+//		List <Integer> categoryIdList = new ArrayList<Integer>();
+//		for (String s :categoryIds.split(",") ) {
+//			categoryIdList.add(Integer.parseInt(s.trim()));
+//			
+//			
+//		}
+//		return booksRepo.findByCategoryIdIn(categoryIdList);
+//				
+//	}
+//		
+//		return null;
+//		
+//	}
 //	
 //	
 //	@GetMapping
 //	public List<Books> findByAuthorIdIn (@RequestBody String authorIds)
 //	{
 //		//if(categoryIds==null)
-//		
+//		{
 //		List <Integer> authorIdList = new ArrayList<Integer>();
 //		for (String s :authorIds.split(",") ) {
 //			authorIdList.add(Integer.parseInt(s.trim()));
@@ -116,8 +115,54 @@ public class BooksRestController {
 //	
 //		return booksRepo.findByAuthorIdIn(authorIdList);		
 //}
-//	
+	//return null;
+//	}
 	
+	
+	@GetMapping
+	public List<Books> fetchAllBooks(@RequestParam(required=false) String authorIds , @RequestParam(required=false)  String categoryIds)
+	{
+		if(authorIds==null)
+			
+		{
+	     	List <Integer> categoryIdList = new ArrayList<Integer>();
+	    	for (String s :categoryIds.split(",") ) {
+			categoryIdList.add(Integer.parseInt(s.trim()));		
+		}
+	    	return booksRepo.findByCategoryIdIn(categoryIdList);			
+	}
+		
+		else if (categoryIds==null)
+			
+		{
+		   List <Integer> authorIdList = new ArrayList<Integer>();
+	    	for (String s :authorIds.split(",") ) {
+			authorIdList.add(Integer.parseInt(s.trim()));
+		}
+		return booksRepo.findByAuthorIdIn(authorIdList);		
+	}
+		
+		else
+			
+		{
+			List<Integer> authorIdList=new ArrayList<Integer>();
+			for (String s :authorIds.split(",") ) {
+				 authorIdList.add(Integer.parseInt(s.trim()));
+			}
+			
+			List<Integer> categoryIdList=new ArrayList<Integer>();
+			for (String s :categoryIds.split(",") ) {
+				categoryIdList.add(Integer.parseInt(s.trim()));
+			}
+			return booksRepo.findByAuthorIdInAndCategoryIdIn(authorIdList, categoryIdList);
+		}
+			
+		}
+		
+		
+	
+	
+
 	
 //get book by using id 
 	
@@ -136,6 +181,7 @@ public class BooksRestController {
 	}
 }
 	
+	
 //add new book
 	
 	@PostMapping
@@ -150,6 +196,7 @@ public class BooksRestController {
 			return new ResponseEntity<>(new ErrorResponse ("Adding Book Failed !!" , e.getMessage()),HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+
 	
 //delete book by id
 	
@@ -161,6 +208,7 @@ public class BooksRestController {
 		return ResponseEntity.ok(new ResponseDTO(booksService.deleteBook(bookid)));
 	}
 
+	
 //update book by id
 	
 	@PutMapping("/{id}")
