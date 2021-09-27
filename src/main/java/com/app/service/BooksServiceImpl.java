@@ -24,15 +24,13 @@ public class BooksServiceImpl implements IBooksService {
 	
 	@Override
 	public Books getBookDetails(int bookid) {
-		
-	
 		return booksRepo.findById(bookid).orElseThrow();
 	}
 
 
 	@Override
-	public Books addBook(Books book) {
-		return booksRepo.save(book);
+	public Books addBook(Books transientBook) {
+		return booksRepo.save(transientBook);
 	}
 
 
@@ -50,11 +48,6 @@ public class BooksServiceImpl implements IBooksService {
 	}
 
 
-//	@Override
-//	public List<Books> findByAuthorIdandCategoryId(int authorid, int categoryid) {
-//		
-//		return booksRepo.findByAuthorIdandCategoryId(authorid, categoryid);
-//	}
 
     
 

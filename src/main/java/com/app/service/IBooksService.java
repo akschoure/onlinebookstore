@@ -10,7 +10,7 @@ public interface IBooksService {
 	
 	Books getBookDetails (int bookid);
 	
-	Books addBook (Books book);
+	Books addBook (Books transientBook);
 	
 	String deleteBook (int bookid);
 	
