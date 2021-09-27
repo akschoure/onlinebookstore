@@ -27,7 +27,7 @@ public class AuthorServiceImpl implements IAuthorService {
 	
 	@Override
 	public Author getAuthorDetails(int authorid) {
-		return authorRepo.findById(authorid).orElseThrow()  ;
+		return authorRepo.findById(authorid).orElseThrow();
 	}
 
 	

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,11 +22,13 @@ import com.app.service.AuthorServiceImpl;
 
 @RestController
 @RequestMapping("/author")
+@CrossOrigin
 public class AuthorRestController {
 	@Autowired
 	public AuthorServiceImpl authorService;
 	
-	@GetMapping
+	//@GetMapping
+	@GetMapping("/allauthor")
 	public List<Author> getAllAuthor()
 	{
 		return authorService.getAllAuthor();
