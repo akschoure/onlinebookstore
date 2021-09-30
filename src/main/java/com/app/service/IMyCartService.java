@@ -16,4 +16,7 @@ public interface IMyCartService {
 	
 	Mycart updateMycart (Mycart detachMycart);
 
+	Mycart cartByUserIdAndBookId(int userId, int bookId);
+	
+	List<Mycart> cartByUserId(int userId);
 }

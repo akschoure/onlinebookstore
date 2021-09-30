@@ -6,9 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -35,23 +34,25 @@ public class Mycart {
 	@Column
 	private int quantity;    //int 
 	
+	@ManyToOne
+	@JoinColumn(name = "bookid")
+	private Books books;
 	
-	//@OneToMany
-	//@JoinColumn(name = "bookid")
-	//private Books books;
-    @Column  (name= "bookid")
-	private Integer bookId;
+ 
+	//@Column  (name= "bookid")
+    //private Integer bookId;
 	
 	
 	
 
 	
+	// this was not a problem
+    @ManyToOne
+	@JoinColumn(name = "userid")
+	private User user;
 	
-	//@OneToOne
-	//@JoinColumn(name = "userid")
-	//private User userid;
-	@Column  (name= "userid")
-	private Integer userId;
+//    @Column  (name= "userid")
+//	private Integer userId;
 	
 		
 

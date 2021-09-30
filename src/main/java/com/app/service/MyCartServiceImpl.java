@@ -47,4 +47,19 @@ public class MyCartServiceImpl implements IMyCartService {
 		return  myCartRepo.save(detachMycart);
 	}
 
+
+	@Override
+	public Mycart cartByUserIdAndBookId(int userId, int bookId) {
+		
+		return myCartRepo.findByUserUseridAndBooksBookid(userId, bookId);
+	}
+
+
+	@Override
+	public List<Mycart> cartByUserId(int userId) {
+		// TODO Auto-generated method stub
+		return myCartRepo.findByUserUserid(userId);
+	}
+
 }
+
