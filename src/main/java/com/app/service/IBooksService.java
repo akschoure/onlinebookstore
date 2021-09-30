@@ -6,6 +6,10 @@ import com.app.pojos.Books;
 
 public interface IBooksService {
 
+	List<Books> getAllBooksByCatId (int categoryid);
+	
+	List<Books> getAllBooksByAuthId (int authorid);
+	
 	List<Books> getAllBooks ();
 	
 	Books getBookDetails (int bookid);

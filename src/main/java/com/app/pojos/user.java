@@ -28,6 +28,7 @@ public class User {
 @GeneratedValue(strategy=GenerationType.AUTO)
     @Column
 	private int userid;	
+
     @Column (length = 30)
     private String firstname;
     @Column (length = 30)

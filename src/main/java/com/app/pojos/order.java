@@ -43,6 +43,14 @@ public class Order {
 	//@JoinColumn(name="bookid")
 	@Column  (name= "bookid")
 	private Integer bookId;
+
+	public Order(int orderid, int quantity, Integer userId, Integer bookId) {
+		super();
+		this.orderid = orderid;
+		this.quantity = quantity;
+		this.userId = userId;
+		this.bookId = bookId;
+	}
 	
 	
 	
