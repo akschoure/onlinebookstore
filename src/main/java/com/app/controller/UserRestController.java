@@ -59,11 +59,11 @@ public class UserRestController {
 	{
 		System.out.println("");
 		try {
-			return new ResponseEntity<>(userService.addUser(user),HttpStatus.CREATED);
+			return ResponseEntity.ok(userService.addUser(user));
 			
 		} catch (RuntimeException e) {
 			
-			return new ResponseEntity<>(new ErrorResponse("fail to add", e.getMessage()),HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(new ErrorResponse("fail to add", e.getMessage()),HttpStatus.BAD_REQUEST);
 		}
 	}
 	

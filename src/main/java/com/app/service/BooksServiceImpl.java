@@ -48,6 +48,20 @@ public class BooksServiceImpl implements IBooksService {
 	}
 
 
+	@Override
+	public List<Books> getAllBooksByCatId (int categoryid) {
+		// TODO Auto-generated method stub
+		return booksRepo.findByCategoryId(categoryid);
+	}
+
+
+	@Override
+	public List<Books> getAllBooksByAuthId(int authorid) {
+		// TODO Auto-generated method stub
+		return booksRepo.findByAuthorId(authorid);
+	}
+
+
 
     
 

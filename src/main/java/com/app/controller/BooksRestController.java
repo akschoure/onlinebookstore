@@ -47,7 +47,28 @@ public class BooksRestController {
 	@GetMapping("/allbooks")
 	public List<Books> getAllBooks()
 	{
+		
 		return booksService.getAllBooks();
+				
+				
+	}
+	
+	@GetMapping("/allbooksbyauth/{aid}")
+	public List<Books> getAllBooksByAuth(@PathVariable int aid)
+	{
+		
+		return booksService.getAllBooksByAuthId(aid);
+				
+				
+	}
+	
+	@GetMapping("/allbooksbycat/{cid}")
+	public List<Books> getAllBooksByCat(@PathVariable int cid)
+	{
+		
+		return booksService.getAllBooksByCatId(cid);
+				
+				
 	}
 	
 	/*
